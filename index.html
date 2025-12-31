@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Aman | Premium Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+/* ================= ROOT ================= */
+:root{
+  --bg:#0b1220;
+  --card:#121a2e;
+  --primary:#6ae3ff;
+  --accent:#8b5cf6;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(1200px 600px at 10% -10%,#1b2a55,transparent),
+             radial-gradient(1200px 600px at 110% 10%,#2b165f,transparent),
+             var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+}
+
+/* ================= NAV ================= */
+.nav{
+  position:sticky;top:0;z-index:999;
+  backdrop-filter:blur(14px);
+  background:linear-gradient(180deg,rgba(18,26,46,.7),rgba(18,26,46,.35));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-inner{
+  max-width:1200px;margin:auto;
+  padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.brand{font-weight:900;letter-spacing:.5px}
+.nav a{
+  color:var(--text);text-decoration:none;margin-left:18px;
+  position:relative;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  transition:.3s;
+}
+.nav a:hover::after{width:100%}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:92vh;display:grid;place-items:center;
+  text-align:center;padding:40px 20px;
+}
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.6rem);
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shine 6s linear infinite;
+}
+@keyframes shine{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(360deg)}
+}
+.hero p{margin-top:14px;color:var(--muted)}
+.hero .btn{
+  display:inline-block;margin-top:28px;
+  padding:14px 28px;border-radius:999px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  color:#001018;text-decoration:none;font-weight:800;
+  box-shadow:0 10px 30px rgba(106,227,255,.25);
+  transition:transform .2s, box-shadow .2s;
+}
+.hero .btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(139,92,246,.35);
+}
+
+/* ================= SECTIONS ================= */
+section{padding:90px 20px}
+.container{max-width:1200px;margin:auto}
+h2{
+  text-align:center;margin-bottom:28px;
+  font-size:clamp(1.6rem,3vw,2.1rem);
+}
+.sub{color:var(--muted);text-align:center;margin-bottom:40px}
+
+/* ================= CARDS ================= */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+.card{
+  position:relative;
+  background:linear-gradient(180deg,#121a2e,#0f1629);
+  border-radius:18px;padding:22px;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:transform .25s, box-shadow .25s;
+  overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:-1px;
+  background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),
+  rgba(106,227,255,.25), transparent 40%);
+  opacity:.0;transition:.25s;
+}
+.card:hover::before{opacity:1}
+.card:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:0 30px 70px rgba(0,0,0,.55);
+}
+
+/* ================= SKILLS ================= */
+.skill{
+  text-align:center;font-weight:700;
+  padding:16px;border-radius:14px;
+  background:linear-gradient(180deg,#121a2e,#0b1220);
+}
+
+/* ================= CONTACT ================= */
+.contact{
+  text-align:center;
+}
+.contact a{
+  display:inline-block;margin:10px 12px;
+  color:var(--primary);text-decoration:none;font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;padding:28px;color:var(--muted)
+}
+
+/* ================= REVEAL ================= */
+.reveal{opacity:0;transform:translateY(30px);transition:.7s}
+.reveal.show{opacity:1;transform:none}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">Aman.dev</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Aman Jaiswal</h1>
+    <p>Diploma IT Student • Web Development Learner</p>
+    <p>Summer Intern @ Peidocx Technologies Pvt. Ltd.</p>
+    <a class="btn" href="#projects">View My Work</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container reveal">
+    <h2>About Me</h2>
+    <p class="sub">
+      Diploma 2nd Year IT student passionate about modern web development.
+      Completed 45 days Summer Training at Peidocx Technologies with hands-on projects.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container reveal">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card skill">HTML</div>
+      <div class="card skill">CSS</div>
+      <div class="card skill">Python</div>
+      <div class="card skill">Django (Learning)</div>
+      <div class="card skill">Web Development</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container reveal">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Student Notes Website</h3>
+        <p>PDF notes display with clean UI.</p>
+        <p><b>Tech:</b> HTML, CSS</p>
+      </div>
+      <div class="card">
+        <h3>Simple Blog Website</h3>
+        <p>Post layout with categories.</p>
+        <p><b>Tech:</b> HTML, CSS</p>
+      </div>
+      <div class="card">
+        <h3>Login & Signup UI</h3>
+        <p>Authentication interface.</p>
+        <p><b>Tech:</b> HTML, CSS</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container reveal contact">
+    <h2>Contact</h2>
+    <p>Email: amanjaiswal9100@gmail.com</p>
+    <a href="#">LinkedIn</a>
+    <a href="#">GitHub</a>
+  </div>
+</section>
+
+<footer>© 2025 Aman Jaiswal • Premium Portfolio</footer>
+
+<script>
+// ===== Scroll Reveal
+const els=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:.15});
+els.forEach(el=>io.observe(el));
+
+// ===== Mouse Glow on Cards
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',`${e.clientX-r.left}px`);
+    card.style.setProperty('--my',`${e.clientY-r.top}px`);
+  });
+});
+</script>
+
+</body>
+</html>
